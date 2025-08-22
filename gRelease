@@ -1,0 +1,16 @@
+#!/bin/bash
+
+VERSION=$1
+TITLE=$2
+NOTES=$3
+
+if [ -z "$VERSION" ]; then
+	echo ""
+	echo "Syntax Error: $0 <VERSION> <TITLE> <NOTES>"
+	echo ""
+	exit 1
+else
+	gh release create $VERSION --title "$TITLE" --notes "$NOTES @Centralize"
+fi
+
+exit 0

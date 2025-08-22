@@ -1,0 +1,15 @@
+#!/bin/bash
+
+MSG=$1
+
+if [ -z "$MSG" ]; then
+	echo ""
+	echo "Syntax Error: $0 <MESSAGE>"
+	echo ""
+	exit 1
+else
+	git add .
+	git commit -m "$MSG"
+	git push
+fi
+exit 0
